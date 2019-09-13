@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<title>Document</title>
+<style>
+* {
+    padding: 0;
+    margin: 0;
+}
+
+form {
+    background: #eee;
+    /* text-align: center; */
+    padding: 2% 5%;
+}
+
+input[type="text"] {
+    border: 0;
+    box-shadow: inset 0px 0px 2px  rgba(0,0,0,0.5);
+    height: 30px;
+    max-width: 250px;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+input[type="button"] {
+    background: red;
+    border: 0;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 2px;
+    font-weight: 500;
+    text-transform: UPPERCASE;
+    cursor: pointer;
+    outline: 0;
+}
+
+ul#list {
+    background: #eee;
+    /* text-align: center; */
+    padding: 2% 5%;
+    margin: 0;
+}
+
+ul#list li:first-child {
+    display: none;
+}
+
+ul#list {}
+
+ul#list li {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+    padding: 3px 0;
+}
+</style>
+
+
+</head>
+
+<body>
+	<form>
+		<h1>Add Item </h1>
+		
+		<br>
+		<input id="fname" name="fname" type="text"><br>
+
+		<input onclick="fun()" type="button" value="Add Item">
+	</form>
+	<ul id="list"></ul><br>
+	<span>
+
+	</span>
+
+
+	<script type="text/javascript">
+		var listArr = [];
+
+		function fun() {
+
+			var input = document.getElementById('fname').value;
+			input.innerText = '';
+			var list = document.getElementById('list');
+			var li = document.createElement('li');
+			list.appendChild(li);
+			li.innerHTML = input;
+			document.getElementById('fname').value = " ";
+	listArr.push(input);
+		}
+	
+		console.log(listArr);
+		fun();
+	</script>
+
+
+
+
+
+
+
+
+
+
+	<!--
+<script type="text/javascript">
+	var listArr = [];
+	function fun() {
+
+		var input = document.getElementById('fname').value;
+		var ps = '<br>'+input;
+		var list = document.getElementById('list');
+		var li = document.createElement('li');
+		var span = document.createElement('span');
+		listArr.push(ps);
+		li.innerHTML = ps;
+		span.innerHTML ="  "+ listArr;
+		list.appendChild(li);
+		li.appendChild(span);
+		input.value = '';
+		console.log(listArr);
+		}
+
+	fun();
+
+</script>
+-->
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		//				function fun() {
+		//		
+		//					var ul = document.getElementById('ul');
+		//					var li = document.createElement('li');
+		//		
+		//					li.appendChild(print(span));
+		//					ul.appendChild(li);
+		//		
+		//					// document.getElementById("result").innerHTML = document.getElementById('fname').value + " "; 
+		//				}
+		//
+		//		function fun() {
+		//			var arr = [];
+		//			//			var span = document.createElement('span');
+		//			var input = document.getElementById('fname').value;
+		//			var ul = document.getElementById('ul');
+		//			var li = document.createElement('li');
+		//			arr.push(input);
+		//			var b = arr.values();
+		//			for (let elements of b) {
+		//				li.innerText(elements);
+		//			}
+		//			ul.appendChild(li);
+		//
+		//		}
+		//
+		//		fun();
+	</script>
+
+
+</body>
+
+</html>
