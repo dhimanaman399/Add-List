@@ -1,0 +1,304 @@
+function test(){
+console.log('Im test');
+}
+undefined
+test();
+VM253:2 Im test
+undefined
+test.dir()
+VM305:1 Uncaught TypeError: test.dir is not a function
+    at <anonymous>:1:6
+(anonymous) @ VM305:1
+console.dir(test);
+VM375:1 ƒ test()arguments: nullcaller: nulllength: 0name: "test"prototype: constructor: ƒ test()__proto__: Object__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()arguments: (...)caller: (...)length: 0name: "toString"__proto__: ƒ ()[[Scopes]]: Scopes[0]Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM253:1[[Scopes]]: Scopes[1]
+undefined
+function show(){
+ var x = 100;   
+dispa();
+}
+
+function dispa(){
+var z = 100;
+console.log(z);
+}
+undefined
+show();
+VM566:8 100
+undefined
+function show(){
+ var x = 100;   
+dispa();
+}
+
+function dispa(){
+var z = 100;
+return z;
+}
+undefined
+show()
+undefined
+function show(){
+ var x = 100;  
+var y = x + z;
+console.log(y);
+dispa();
+}
+
+function dispa(){
+var z = 100;
+return z;
+}
+undefined
+show()
+VM693:3 Uncaught ReferenceError: z is not defined
+    at show (<anonymous>:3:13)
+    at <anonymous>:1:1
+show @ VM693:3
+(anonymous) @ VM712:1
+function show(){
+ var x = 100;  
+var y = x + dispa();
+console.log(y);
+
+}
+
+function dispa(){
+var z = 100;
+return z;
+}
+undefined
+show()
+VM727:4 200
+undefined
+ 
+function show(){
+ var x = 100;  
+var y = x + z;
+console.log(y);
+dispa();
+}
+
+function dispa(){
+var z = 100;
+return z;
+}
+
+show();
+VM824:4 Uncaught ReferenceError: z is not defined
+    at show (<anonymous>:4:13)
+    at <anonymous>:14:1
+show @ VM824:4
+(anonymous) @ VM824:14
+function show(){
+ var x = 100;  
+var y = x + dispa();
+console.log(y);
+
+}
+
+function dispa(){
+var z = 100;
+return z;
+}
+undefined
+show()
+VM834:4 200
+undefined
+//=========== this xample was of call back
+undefined
+//=========== this function construtor
+undefined
+function Employe(id,name,basicSalary){
+this.id= id;
+this.name= name;
+this.basicSalary = basicSalary ;
+this.hra = function(){
+x=10;
+return this.basicSalary * 0.30;
+}
+}
+undefined
+var ram = new Employe(1001,'Ram',9000);
+undefined
+function show(){
+dispa();
+ var x = 100;  
+var y = x + z ;
+console.log(y);
+}
+
+function dispa(){
+var z = 100;
+return z;
+}
+undefined
+show()
+VM1358:4 Uncaught ReferenceError: z is not defined
+    at show (<anonymous>:4:13)
+    at <anonymous>:1:1
+show @ VM1358:4
+(anonymous) @ VM1378:1
+function show(){
+dispa();
+ var x = 100;  
+var y = x + z ;
+console.log(y);
+}
+
+function dispa(){
+var z = 100;
+console.log(z);
+}
+undefined
+show()
+VM1399:10 100
+VM1399:4 Uncaught ReferenceError: z is not defined
+    at show (<anonymous>:4:13)
+    at <anonymous>:1:1
+show @ VM1399:4
+(anonymous) @ VM1405:1
+function Employe(id,name,basicSalary){
+this.id= id;
+this.name= name;
+this.basicSalary = basicSalary ;
+this.hra = function(){
+x=10;
+return this.basicSalary * 0.30;
+}
+}
+undefined
+var ram = new Employe(1001,'Ram',9000);
+undefined
+ram
+Employe {id: 1001, name: "Ram", basicSalary: 9000, hra: ƒ}
+var ram = new Employe(1002,'Ramu',12000);
+undefined
+var Ramu = new Employe(1002,'Ramu',12000);
+undefined
+var ram = new Employe(1001,'Ram',9000);
+undefined
+ram
+Employe {id: 1001, name: "Ram", basicSalary: 9000, hra: ƒ}
+Ramu
+Employe {id: 1002, name: "Ramu", basicSalary: 12000, hra: ƒ}
+ram.hra
+ƒ (){
+x=10;
+return this.basicSalary * 0.30;
+}
+Ramu.hra
+ƒ (){
+x=10;
+return this.basicSalary * 0.30;
+}
+ram.hra()
+2700
+Ramu.hra()
+3600
+//========= hra is a commonn function so add it as prototye to make it inherit
+undefined
+Employe.prototype.hra = function(){
+return this.basicSalary * 0.30;
+}
+ƒ (){
+return this.basicSalary * 0.30;
+}
+Employe
+ƒ Employe(id,name,basicSalary){
+this.id= id;
+this.name= name;
+this.basicSalary = basicSalary ;
+this.hra = function(){
+x=10;
+return this.basicSalary * 0.30;
+}
+}
+ram
+Employe {id: 1001, name: "Ram", basicSalary: 9000, hra: ƒ}basicSalary: 9000hra: ƒ ()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1410:5[[Scopes]]: Scopes[1]id: 1001name: "Ram"__proto__: Object
+ram.hra()
+2700
+Employe.prototype.ta = function(){
+return this.basicSalary * 0.20;
+}
+ƒ (){
+return this.basicSalary * 0.20;
+}
+Employee.prototype.pf = function(){
+return this.basicSalary * 0.05;
+}
+VM2155:1 Uncaught ReferenceError: Employee is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2155:1
+Employe.prototype.pf = function(){
+return this.basicSalary * 0.05;
+}
+ƒ (){
+return this.basicSalary * 0.05;
+}
+Employe.prototype.gs = function(){
+return this.basicSalary + this.hra() + this.da() + this.ta() - this.pf();
+}
+ƒ (){
+return this.basicSalary + this.hra() + this.da() + this.ta() - this.pf();
+}
+Employe.prototype.print=  function(){
+console.log(` Id is ${this.id}`)
+}
+ƒ (){
+console.log(` Id is ${this.id}`)
+}
+Employe.prototype.print=  function(){
+console.log(`
+ Id is ${this.id}
+Name is ${this.name}
+Basic Salary is ${this.basicSalary}
+HRA is ${this.hra()}
+DA is ${this.da()}
+TA is ${this.ta()}
+PF is ${this.pf()}
+`)
+}
+
+
+
+
+
+ƒ (){
+console.log(`
+ Id is ${this.id}
+Name is ${this.name}
+Basic Salary is ${this.basicSalary}
+HRA is ${this.hra()}
+DA is ${this.da()}
+TA is ${this.ta()}
+PF is ${this.pf()}
+`)
+}
+ram.print
+ƒ (){
+console.log(`
+ Id is ${this.id}
+Name is ${this.name}
+Basic Salary is ${this.basicSalary}
+HRA is ${this.hra()}
+DA is ${this.da()}
+TA is ${this.ta()}
+PF is ${this.pf()}
+`)
+}
+ram.print()
+VM2419:7 Uncaught TypeError: this.da is not a function
+    at Employe.print (<anonymous>:7:14)
+    at <anonymous>:1:5
+Employe.print @ VM2419:7
+(anonymous) @ VM2460:1
+var ram = new Employe(1001,'Ram',9000);
+undefined
+ram.print()
+VM2419:7 Uncaught TypeError: this.da is not a function
+    at Employe.print (<anonymous>:7:14)
+    at <anonymous>:1:5
+Employe.print @ VM2419:7
+(anonymous) @ VM2489:1
+ram
+Employe {id: 1001, name: "Ram", basicSalary: 9000, hra: ƒ}basicSalary: 9000hra: ƒ ()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}constructor: ƒ ()__proto__: Object__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()arguments: (...)caller: (...)length: 1name: "bind"__proto__: ƒ ()[[Scopes]]: Scopes[0]call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM1410:5[[Scopes]]: Scopes[1]id: 1001name: "Ram"__proto__: Object
