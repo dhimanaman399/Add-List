@@ -1,0 +1,86 @@
+class Students {
+            constructor(id, name, eng, math, hindi) {
+                this.id = id;
+                this.name = name;
+                this.eng = eng;
+                this.math = math;
+                this.hindi = hindi;
+            }
+            total() {
+                return this.eng + this.math + this.hindi;
+            }
+
+            perc() {
+                return (this.eng + this.math + this.hindi) / 300 * 100;
+            }
+            grade() {
+                if (this.perc() >= 90) {
+                    return 'Grade A';
+                } else if (this.perc() < 90 && this.perc() >= 70) {
+                    return 'Grade B';
+                } else if (this.perc() < 70 && this.perc() >= 60) {
+                    return 'Grade C';
+                } else if (this.perc() <= 60) {
+                    return 'Grade D';
+                } else {
+                    return 'Practice More';
+                }
+
+            }
+
+            print() {
+                console.log(`
+Roll no = ${this.id}
+Name = ${this.name}
+English Marks = ${this.eng}
+Maths Marks = ${this.math}
+Hindi Marks = ${this.hindi}
+Total Marks = ${this.total()}
+Percentage =  ${this.perc()}
+Grade = ${this.grade()}
+`);
+            }
+}
+undefined
+var ram = new Students(1,'Ram',40,60,40);
+undefined
+var anuj = new Students(2,'Anuj',40,60,80);
+undefined
+var kaur = new Students(3,'Kaur',33,33,20);
+undefined
+ram.print();
+VM4278:32 
+Roll no = 1
+Name = Ram
+English Marks = 40
+Maths Marks = 60
+Hindi Marks = 40
+Total Marks = 140
+Percentage =  46.666666666666664
+Grade = Grade D
+
+undefined
+anuj.print();
+VM4278:32 
+Roll no = 2
+Name = Anuj
+English Marks = 40
+Maths Marks = 60
+Hindi Marks = 80
+Total Marks = 180
+Percentage =  60
+Grade = Grade C
+
+undefined
+kaur.print();
+VM4278:32 
+Roll no = 3
+Name = Kaur
+English Marks = 33
+Maths Marks = 33
+Hindi Marks = 20
+Total Marks = 86
+Percentage =  28.666666666666668
+Grade = Grade D
+
+undefined
